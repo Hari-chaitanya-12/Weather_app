@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    max-width: 1440px;
+    max-height: 100vh;
+    background: #2b608b;
+    font-family: "Comfortaa", sans-serif;
+}
+.app{
+  min-height: 100vh;    
+  width: 100vw;            
+  left: 0;
+  top: 0;
+  background-size: cover;      
+  background-position: center; 
+  background-repeat: no-repeat;
+  overflow: hidden;            
+  display: block;
+
+}
+
+.app::before {
+  content: "";
+  position: absolute;
+  inset: 0;                      
+  top:0;right:0;bottom:0;left:0;
+
+  pointer-events: none;
+
+  background: rgba(0,0,0,0.22);
+
+  backdrop-filter: blur(8px) saturate(1.03);
+  -webkit-backdrop-filter: blur(8px) saturate(1.03);
+  transition: backdrop-filter 300ms ease, background 300ms ease;
+
+}
+
+
+.app.default.bg{
+    background: #2b608b;
+}
+
+.app.sunny{
+    background-image: url("/public/assets/images/sunny.jpg ");
+    
+}
+
+.app.night{
+    background-image: url("/public/assets/images/night.jpg");
+}
+
+.app.cloudy{
+    background-image: url("/public/assets/images/cloudy.jpg");
+}
+.app.rainy{
+    background-image: url("/public/assets/images/raniy.jpg");
+}
+.app.snow{
+    background-image: url("/public/assets/images/snow.jpg");
+}

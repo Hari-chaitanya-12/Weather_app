@@ -1,8 +1,6 @@
 import React from "react";
 import "./Card.css";
-
 const PressureCard = ({ data }) => {
-
   if (!data) {
     return (
       <div className="pressurecontainer">

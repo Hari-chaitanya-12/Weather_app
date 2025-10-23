@@ -1,4 +1,3 @@
-// src/App.jsx
 import React, { useState } from "react";
 import SearchBar from "./components/SearchBar";
 import CurrentWeatherCard from "./components/CurrentWeatherCard";
@@ -11,7 +10,7 @@ import { fetchWeatherByCity, fetchForecastByCity } from "./components/weatherLog
 import "./App.css";
 
 function App() {
-  const [weatherData, setWeatherData] = useState(null); // { current, forecast }
+  const [weatherData, setWeatherData] = useState(null); 
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -31,13 +30,13 @@ function App() {
     }
   };
 
-  // derive a simple background class from current weather
+
   const getBackgroundClass = () => {
     const current = weatherData?.current;
     if (!current || !Array.isArray(current.weather) || !current.weather[0]) return "default-bg";
 
     const main = (current.weather[0].main || "").toLowerCase();
-    const icon = current.weather[0].icon || ""; // e.g. "01d" or "01n"
+    const icon = current.weather[0].icon || ""; 
     const isNight = icon.endsWith("n");
 
     if (main.includes("cloud")) return "cloudy";
@@ -53,9 +52,7 @@ function App() {
 
   return (
     <div className={`app ${bgClass} `}>
-      {/* optional effects layer — style in CSS if you want overlays/animations */}
       <div className="app-bg" aria-hidden="true" />
-
       <SearchBar onSearch={handleSearch} loading={loading} error={error} />
       <CurrentWeatherCard data={weatherData?.current} loading={loading} error={error} />
       <ForecastCard data={weatherData?.forecast} />
